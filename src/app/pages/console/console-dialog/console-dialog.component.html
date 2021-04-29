@@ -1,0 +1,82 @@
+<div *ngIf="data.estado!='publico'" class="form-container">
+  <form [formGroup]="formGroup" fxLayout="column" (ngSubmit)="onSubmit()">
+    <div fxFlex>
+      <mat-form-field style="width: 100%">
+        <mat-label>Lote</mat-label>
+        <input
+          matInput
+          formControlName="lote"
+          oninput="this.value = this.value.toUpperCase()"
+          autocomplete="off"
+        />
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field style="width: 100%">
+        <mat-label>Manzana</mat-label>
+        <mat-select #formaPagoSelect formControlName="manzana">
+          <mat-option
+            *ngFor="let manzana of ['1', '2', '3', '4', '5', '6', '7', 8]"
+            [value]="manzana"
+          >
+            {{ manzana }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field style="width: 100%">
+        <mat-label>Estado</mat-label>
+        <mat-select #formaPagoSelect formControlName="estado">
+          <mat-option
+            *ngFor="let estado of ['disponible', 'reservado', 'indisponible']"
+            [value]="estado"
+          >
+            {{ estado | titlecase }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field style="width: 100%">
+        <mat-label>Precio en U$</mat-label>
+        <input
+          type="number"
+          matInput
+          formControlName="precio"
+          autocomplete="off"
+        />
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field style="width: 100%">
+        <mat-label>Obsrvación</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="observacion"
+          autocomplete="off"
+        />
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <div *ngIf="!isEditing" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <div fxFlex fxFill>
+          <button style="width: 100%;" mat-raised-button (click)="formStateChange('editar')">Editar</button>
+        </div>
+      </div>
+      <div *ngIf="isEditing" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
+        <div fxFlex>
+          <button  mat-raised-button (click)="formStateChange('cancelar')">Cancelar</button>
+        </div>
+        <div fxFlex>
+            <button type="submit" mat-raised-button>Guardar</button>
+          </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="data.estado=='publico'">
+    Lote público
+</div>

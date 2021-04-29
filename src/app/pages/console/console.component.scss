@@ -1,0 +1,71 @@
+@media only screen and (max-width: 599px) {
+    .map {
+        object-fit: fill;
+    }
+    .svg-container {
+        height: 50%;
+        width: 100%;
+    }
+    .info-container {
+        padding-top: 30px;
+    }
+    .map-item-container {
+
+    }
+    
+}
+
+@media only screen and (min-width: 599px) {
+    svg {
+        object-fit: cover;
+    }
+    .svg-container {
+        height: 100%;
+        width: 100%;
+    }
+    .info-container {
+        padding-top: 10px;
+    }
+    .map-item-container {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 15%;
+        left: 75%;
+    }
+}
+
+.map {
+    position: relative;
+}
+
+.svg {
+    width: 100%;
+    height: 100%;
+}
+
+polygon {
+    background-color: red !important;
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+  }
+
+.texto{
+    font-family: 'Montserrat';
+    font-weight: 500;
+  }
+
+  mat-card {
+      align-items: center;
+      height: 40px;
+}
+
+polygon:hover {
+    background-color: black;
+}

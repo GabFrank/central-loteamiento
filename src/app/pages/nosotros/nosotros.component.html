@@ -1,0 +1,53 @@
+<div style="height: 100%; overflow-y: hidden;">
+  <div>
+    <img class="banner" src="assets/banner-nosotros.jpg" alt="banner" />
+    <div class="titulo">Nosotros</div>
+  </div>
+  <div
+    fxLayout="column"
+    fxLayoutAlign="center center"
+    class="texto-container"
+    style="width: 100%; max-height: 300px; text-align: center; overflow-y: scroll"
+  >
+    <p class="texto" fxFlex style="text-align: center; font-size: 18px">
+      Somos una empresa que nasce con el primer emprendimiento imobiliario que
+      es Loteamiento Central y contamos con varios proyectos futuros de
+      loteamiento tanto en la ciudad de Salto del Guairá como en otras
+      ciudades del Paraguay.
+    </p>
+    <p class="texto" fxFlex style="text-align: center; font-size: 18px">
+      Nuestro objetivo principal es brindar a nuestros clientes la posibilidad
+      de construir un futuro con seguridad y bienestar.
+    </p>
+    <p class="texto" fxFlex style="text-align: center; font-size: 18px">
+      Nos comprometemos a desarrollar urbanizaciones de forma respetuosa con
+      el medio ambiente tomando medidas para frenar el posible impacto
+      indirecto y/o directo de cualquiera de nuestras actividades.
+    </p>
+  </div>
+  <div
+    class="footer-container"
+    style="background-color: #239b56; width: 100%;"
+  >
+    <div fxLayout="row" fxLayoutAlign="center center">
+      <div
+        fxFlex.gt-sm="50"
+        fxFlex="60"
+        fxFill
+        class="footer-text"
+        style="color: white; text-align: center"
+      >
+        Tu lote te espera! Escribinos
+      </div>
+      <div fxFlex.gt-sm="10" fxFlex="40" (click)="whatsClick()">
+        <a
+          class="iconify"
+          data-icon="mdi-whatsapp"
+          data-inline="false"
+          style="color: white; width: 80px; height: 80px"
+        ></a>
+      </div>
+    </div>
+  </div>
+
+</div>

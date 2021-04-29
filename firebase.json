@@ -1,0 +1,19 @@
+{
+  "hosting": {
+    "site": "loteamientocentral",
+    "public": "dist/central-website",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [{
+        "source": "/public/**",
+        "destination": "/public.html"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }]
+  }
+}
