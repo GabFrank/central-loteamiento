@@ -1,33 +1,38 @@
-<div style="height: 100%; overflow-y: hidden;">
-  <div>
-    <img class="banner" src="assets/banner-nosotros.jpg" alt="banner" />
-    <div class="titulo">Nosotros</div>
+<div fxLayout="column" style="height: 100%">
+  <div fxFlex="80" fxFlex.xs fxLayout="column" style="overflow-y: scroll;">
+    <div fxFlex fxFlex.xs="30" class="banner-container">
+      <img class="banner" src="/assets/banner-nosotros.jpg" alt="banner" />
+      <div class="titulo">Nosotros</div>
+    </div>
+    <div
+      fxFlex
+      fxFlex.xs="70"
+      fxLayout="column"
+      fxLayoutAlign="center center"
+      style="width: 100%; text-align: center; height: 100%;"
+    >
+      <p class="texto" fxFlex style="text-align: center; font-size: 18px">
+        Somos una empresa que nasce con el primer emprendimiento imobiliario que
+        es Loteamiento Central y contamos con varios proyectos futuros de
+        loteamiento tanto en la ciudad de Salto del Guairá como en otras
+        ciudades del Paraguay.
+      </p>
+      <p class="texto" fxFlex style="text-align: center; font-size: 18px">
+        Nuestro objetivo principal es brindar a nuestros clientes la posibilidad
+        de construir un futuro con seguridad y bienestar.
+      </p>
+      <p class="texto" fxFlex style="text-align: center; font-size: 18px">
+        Nos comprometemos a desarrollar urbanizaciones de forma respetuosa con
+        el medio ambiente tomando medidas para frenar el posible impacto
+        indirecto y/o directo de cualquiera de nuestras actividades.
+      </p>
+    </div>
   </div>
   <div
-    fxLayout="column"
-    fxLayoutAlign="center center"
-    class="texto-container"
-    style="width: 100%; max-height: 300px; text-align: center; overflow-y: scroll"
-  >
-    <p class="texto" fxFlex style="text-align: center; font-size: 18px">
-      Somos una empresa que nasce con el primer emprendimiento imobiliario que
-      es Loteamiento Central y contamos con varios proyectos futuros de
-      loteamiento tanto en la ciudad de Salto del Guairá como en otras
-      ciudades del Paraguay.
-    </p>
-    <p class="texto" fxFlex style="text-align: center; font-size: 18px">
-      Nuestro objetivo principal es brindar a nuestros clientes la posibilidad
-      de construir un futuro con seguridad y bienestar.
-    </p>
-    <p class="texto" fxFlex style="text-align: center; font-size: 18px">
-      Nos comprometemos a desarrollar urbanizaciones de forma respetuosa con
-      el medio ambiente tomando medidas para frenar el posible impacto
-      indirecto y/o directo de cualquiera de nuestras actividades.
-    </p>
-  </div>
-  <div
+    fxFlex="20"
+    fxFlex.xs="20"
     class="footer-container"
-    style="background-color: #239b56; width: 100%;"
+    style="background-color: #239b56; width: 100%"
   >
     <div fxLayout="row" fxLayoutAlign="center center">
       <div
@@ -49,5 +54,4 @@
       </div>
     </div>
   </div>
-
 </div>

@@ -16,6 +16,8 @@ import { IvyCarouselModule } from 'angular-responsive-carousel';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
+import { NgxPanZoomModule } from 'ngx-panzoom';
+
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { environment } from 'src/environments/environment';
     MatSidenavModule,
     IvyCarouselModule,
     MatCardModule,
+    NgxPanZoomModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule
   ],

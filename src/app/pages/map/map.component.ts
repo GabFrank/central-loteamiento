@@ -1,13 +1,18 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { AfterViewChecked, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { AngularFirestore, DocumentSnapshot } from '@angular/fire/firestore';
+import { PanZoomConfig } from 'ngx-panzoom';
 import { Observable } from 'rxjs';
+
 
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss'],
 })
-export class MapComponent implements OnInit {
+export class MapComponent implements OnInit, AfterViewChecked {
+
+  @ViewChild('svgmap', {static: false}) svgMap: ElementRef<any> | undefined;
+
   green = '#2ECC71';
   orange = '#F1C40F';
   red = '#E74C3C';
@@ -17,6 +22,7 @@ export class MapComponent implements OnInit {
   selectedData: any;
   testArray: sgvInterface[];
   lotes: Lote[] = [];
+  panZoomConfig: PanZoomConfig = new PanZoomConfig()
   lotesObs: Observable<any> = this.store
     .collection('lotes')
     .valueChanges({ idField: 'id' });
@@ -30,8 +36,11 @@ export class MapComponent implements OnInit {
       console.log('hola')
     })
   }
+  ngAfterViewChecked(): void {
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   sgvData: sgvInterface[] = [
     {
