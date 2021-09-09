@@ -1,18 +1,24 @@
-<div fxLayout="column" style="height: 100%; overflow-y: scroll;">
-  <div fxFlex.gt="65" fxFlex.xs="25">
+<div fxLayout="column" style="height: 100%; overflow-y: scroll">
+  <div fxFlex.gt fxFlex.xs="35">
     <img class="banner" src="assets/lc1610.jpg" alt="banner" />
   </div>
-  <div fxFlex.gt="20" fxFlex.xs="60" fxLayout="column" style="overflow-y: scroll; height: 100%;">
+  <div
+    fxFlex.gt
+    fxFlex.xs="60"
+    fxLayout="column"
+    style="overflow-y: scroll;"
+  >
     <div
       fxFlex.gt-sm="50"
-      fxFlex.xs="40"
+      fxFlex.xs
       fxLayout="column"
+      fxLayoutGap="10px"
       fxLayoutAlign="center center"
       class="test"
       style="width: 100%; text-align: center; padding-top: 10px"
     >
-      <h1 fxFlex class="test">Tu futuro está aquí.</h1>
-      <p class="texto" fxFlex style="text-align: center; font-size: 15px">
+      <h1 fxFlex="20" class="test">Tu futuro está aquí.</h1>
+      <p class="texto" fxFlex="40" style="text-align: center; font-size: 15px">
         Situado en el corazón de la ciudad de Salto del Guairá, Loteamiento
         Central es uno de los últimos loteamientos en el centro de la ciudad.
         Aquí encontraras el terreno ideal, ya sea para un emprendimiento
@@ -67,28 +73,27 @@
   </div>
   <div
     fxFlex="25"
-    fxFlex.xs="20"
-    class="footer-container"
-    style="background-color: #239b56; height: 200px; width: 100%"
+    fxFlex.xs="25"
+    fxFlex.sm="20"
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    style="background-color: #239b56; width: 100%; padding-bottom: 50px;"
   >
-    <div fxLayout="row" fxLayoutAlign="center center">
-      <div
-        fxFlex.gt-sm="50"
-        fxFlex="60"
-        fxFill
-        class="footer-text"
-        style="color: white; text-align: center"
-      >
-        Tu lote te espera! Escribinos
-      </div>
-      <div fxFlex.gt-sm="10" fxFlex="40" (click)="whatsClick()">
-        <a
-          class="iconify"
-          data-icon="mdi-whatsapp"
-          data-inline="false"
-          style="color: white; width: 100px; height: 100px"
-        ></a>
-      </div>
+    <div
+      fxFlex.gt-sm="50"
+      fxFlex.xs="60"
+      class="footer-text"
+      style="color: white; text-align: center"
+    >
+      Tu lote te espera! Escribinos
+    </div>
+    <div fxFlex.gt-sm="10" fxFlex.xs="40" (click)="whatsClick()">
+      <a
+        class="iconify"
+        data-icon="mdi-whatsapp"
+        data-inline="false"
+        style="color: white; width: 90px; height: 90px"
+      ></a>
     </div>
   </div>
 

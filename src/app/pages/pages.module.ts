@@ -23,6 +23,7 @@ import {MatInputModule} from '@angular/material/input'
 import {MatSelectModule} from '@angular/material/select';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { NgxCurrencyModule } from 'ngx-currency';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ReactiveFormsModule,
     FormsModule,
     MatInputModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    NgxCurrencyModule
   ],
   exports: [
     HomeComponent

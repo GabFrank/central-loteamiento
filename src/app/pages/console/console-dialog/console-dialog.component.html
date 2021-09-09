@@ -1,4 +1,4 @@
-<div *ngIf="data.estado!='publico'" class="form-container">
+<div *ngIf="data.data.estado!='publico'" class="form-container" style="overflow-y: scroll;">
   <form [formGroup]="formGroup" fxLayout="column" (ngSubmit)="onSubmit()">
     <div fxFlex>
       <mat-form-field style="width: 100%">
@@ -39,18 +39,67 @@
     </div>
     <div fxFlex>
       <mat-form-field style="width: 100%">
-        <mat-label>Precio en U$</mat-label>
+        <mat-label>Precio al contado (U$)</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="precio"
+          autocomplete="off"
+          currencyMask
+              [options]="currency.currencyOptionsNoGuarani"
+        />
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field style="width: 100%">
+        <mat-label>Precio financiado (U$)</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="precioFinanciado"
+          autocomplete="off"
+          currencyMask
+              [options]="currency.currencyOptionsNoGuarani"
+        />
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field style="width: 100%">
+        <mat-label>Plazo en meses</mat-label>
         <input
           type="number"
           matInput
-          formControlName="precio"
+          formControlName="plazo"
           autocomplete="off"
         />
       </mat-form-field>
     </div>
     <div fxFlex>
       <mat-form-field style="width: 100%">
-        <mat-label>Obsrvación</mat-label>
+        <mat-label>Porcentaje (%)</mat-label>
+        <input
+          type="number"
+          matInput
+          formControlName="porcentaje"
+          autocomplete="off"
+        />
+        <div matSuffix>%</div>
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field style="width: 100%">
+        <mat-label>M2</mat-label>
+        <input
+          type="text"
+          matInput
+          formControlName="m2"
+          autocomplete="off"
+        />
+      </mat-form-field>
+    </div>
+    <div fxFlex>
+      <mat-form-field style="width: 100%">
+        <mat-label>Observación</mat-label>
         <input
           type="text"
           matInput
@@ -59,6 +108,41 @@
         />
       </mat-form-field>
     </div>
+    <form [formGroup]="formGroup2" fxLayout="column">
+      <div fxFlex fxLayout="row">
+        <div fxFlex>
+          Entrega ($)
+        </div>    
+        <div fxFlex *ngIf="formGroup.get('precioFinanciado').value!=null && formGroup.get('porcentaje').value!=null">
+          {{formGroup?.get('precioFinanciado').value * (formGroup?.get('porcentaje').value / 100) | number: '1.2-2'}} $.
+        </div>       
+      </div>
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-between start">
+      <div fxFlex>
+        Entrega (G$)
+      </div>    
+      <div fxFlex *ngIf="formGroup.get('precioFinanciado').value!=null && formGroup.get('porcentaje').value!=null && data.cambio!=null">
+        {{formGroup?.get('precioFinanciado').value * (formGroup?.get('porcentaje').value / 100) * data.cambio | number: '1.0-0'}} Gs.
+      </div>       
+    </div>
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-between start">
+      <div fxFlex>
+        Cuota ($)
+      </div>    
+      <div fxFlex *ngIf="formGroup.get('precioFinanciado').value!=null && formGroup.get('porcentaje').value!=null && data.cambio!=null && formGroup?.get('plazo').value">
+        {{(formGroup?.get('precioFinanciado').value - (formGroup?.get('precioFinanciado').value * (formGroup?.get('porcentaje').value / 100))) / formGroup?.get('plazo').value | number: '1.2-2'}} $.
+      </div>       
+    </div>
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-between start">
+      <div fxFlex>
+        Cuota (G$)
+      </div>    
+      <div fxFlex *ngIf="formGroup.get('precioFinanciado').value!=null && formGroup.get('porcentaje').value!=null && data.cambio!=null">
+        {{((formGroup?.get('precioFinanciado').value - (formGroup?.get('precioFinanciado').value * (formGroup?.get('porcentaje').value / 100))) / formGroup?.get('plazo').value) * data.cambio | number: '1.0-0'}} Gs.
+      </div>       
+    </div>
+
+    </form>
     <div fxFlex>
       <div *ngIf="!isEditing" fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="20px">
         <div fxFlex fxFill>
@@ -77,6 +161,6 @@
   </form>
 </div>
 
-<div *ngIf="data.estado=='publico'">
+<div *ngIf="data.data.estado=='publico'">
     Lote público
 </div>

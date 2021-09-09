@@ -2,6 +2,7 @@ import { AfterViewChecked, Component, ElementRef, OnInit, ViewChild } from '@ang
 import { AngularFirestore, DocumentSnapshot } from '@angular/fire/firestore';
 import { PanZoomConfig } from 'ngx-panzoom';
 import { Observable } from 'rxjs';
+import { Lote } from '../console/console.component';
 
 
 @Component({
@@ -717,11 +718,3 @@ interface sgvInterface {
   data?: any;
 }
 
-export class Lote {
-  id: any;
-  manzana?: string;
-  lote?: string;
-  points?: string;
-  estado?: string;
-  precio?: number;
-}

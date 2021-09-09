@@ -19,9 +19,13 @@ export class ConsoleComponent implements OnInit {
   selectedData: any;
   testArray: sgvInterface[];
   lotes: Lote[] = [];
+  cambio: number = 7000;
   lotesObs: Observable<any> = this.store
     .collection('lotes')
     .valueChanges({ idField: 'id' });
+  cambioObs: Observable<any> = this.store
+  .collection('cambio')
+  .valueChanges({ idField: 'id' });
 
   
 
@@ -32,16 +36,20 @@ export class ConsoleComponent implements OnInit {
     this.testArray = [];
     this.lotesObs.subscribe((data)=>{
       this.lotes = data;
-      console.log('hola')
+    })
+    this.cambioObs.subscribe((data)=>{
+      console.log(data[0])
+      this.cambio = data[data.length-1].cambio
     })
   }
 
   openDialog(data: Lote){
     const dialogRef = this.dialog.open(ConsoleDialogComponent, {
-      data: data
+      data: {data: data, cambio: this.cambio},
+      width: '300px',
+      height: '600px'
     });
     dialogRef.afterClosed().subscribe((res)=>{
-      console.log(res)
     });
   }
 
@@ -728,5 +736,18 @@ export class Lote {
   lote?: string;
   points?: string;
   estado?: string;
-  precio?: number;
+  precio?: number; //precio contado
+  precioFinanciado?: number;
+  plazo?: number;
+  porcentaje?: number;
+  observacion?: number;
+  m2?: number;
+}
+
+export class Cambio {
+  cambio?: number;
+
+  constructor(cambio: number){
+    this.cambio = cambio
+  }
 }

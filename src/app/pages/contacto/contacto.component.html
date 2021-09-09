@@ -1,36 +1,33 @@
 <div fxLayout="column" style="height: 100%">
-  <div fxFlex="80" fxFlex.xs fxLayout="column">
-    <div fxFlex fxFlex.xs="30" class="banner-container">
-      <img class="banner" src="/assets/banner-nosotros.jpg" alt="banner" />
-      <div class="titulo">Contacto</div>
+  <div fxFlex fxFlex.xs="35" class="banner-container">
+    <img class="banner" height="300px" src="/assets/banner-nosotros.jpg" alt="banner" />
+    <div class="titulo">Contacto</div>
+  </div>
+  <div
+    fxFlex="15"
+    fxFlex.xs
+    fxLayout.gt-sm="row"
+    fxLayout.xs="column"
+    fxLayoutAlign="center center"
+    style="width: 100%; text-align: center;"
+  >
+    <div fxFlex>
+      Opción 1:
+      <a href="" (click)="whatsClick(url1)">
+        <h1>+595 993 332 833</h1>
+      </a>
     </div>
-    <div
-      fxFlex="30"
-      fxFlex.xs="50"
-      fxLayout.gt-sm="row"
-      fxLayout.xs="column"
-      fxLayoutAlign="center center"
-      style="width: 100%; text-align: center; height: 100%"
-    >
-    
-      <div fxFlex>
-          Opción 1:
-          <a href="" (click)="whatsClick(url1)">
-            <h1>+595 993 332 833</h1>
-          </a>
-      </div>
-      <div class="ubicacion" fxFlex style="width: 100%; text-align: center;">
-        Central de Atendimiento:
-        <a href="" (click)="mapsClick()">
-          <h2>Av. Paraguay c/ Av. Itaipu</h2>
-        </a>
-      </div>
-      <div fxFlex>
-        Opción 2:
-        <a href="" (click)="whatsClick(url2)">
-          <h1>+595 983 419 819</h1>
-        </a>
-      </div>
+    <div class="ubicacion" fxFlex style="width: 100%; text-align: center">
+      Central de Atendimiento:
+      <a href="" (click)="mapsClick()">
+        <h2>Av. Paraguay c/ Av. Itaipu</h2>
+      </a>
+    </div>
+    <div fxFlex>
+      Opción 2:
+      <a href="" (click)="whatsClick(url2)">
+        <h1>+595 983 419 819</h1>
+      </a>
     </div>
   </div>
   <div

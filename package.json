@@ -28,6 +28,7 @@
     "angular-responsive-carousel": "^2.0.2",
     "firebase": "^8.4.2",
     "material-icons": "^0.6.1",
+    "ngx-currency": "^2.5.2",
     "ngx-panzoom": "^11.0.0",
     "panzoom": "^9.4.2",
     "rxjs": "~6.6.0",
